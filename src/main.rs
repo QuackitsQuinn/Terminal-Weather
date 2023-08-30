@@ -1,6 +1,7 @@
 mod conf;
 mod units;
 mod endpoints;
+mod endpoint;
 
 fn main() {
     println!("Hello, world!");
