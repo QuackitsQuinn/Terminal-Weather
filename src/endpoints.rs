@@ -1,4 +1,10 @@
 use crate::endpoint::Endpoint;
 
-const IP_GEOLOCATION_URL: Endpoint =
-    Endpoint::new_qp("http://ip-api.com/json", "GET", vec!["fields=57561".to_string()]);
+
+pub fn get_ip_geolocation_url() -> Endpoint {
+    Endpoint::new_qp("http://ip-api.com/json", "GET",vec!("fields=49369".to_owned()))
+}
+
+pub fn get_weather_url() -> Endpoint {
+    Endpoint::new("http://api.openweathermap.org/data/2.5/weather", "GET")
+}

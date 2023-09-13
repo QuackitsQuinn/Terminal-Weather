@@ -13,22 +13,13 @@ pub struct Configuration {
     pub units: Units
 }
 
-impl Configuration {
-    /// Load the configuration from the default path
-    pub fn load() -> Configuration {
-        let config_path = Path::new(CONFIG_PATH);
-        Configuration::load_from_path(config_path)
-    }
-    /// Load the configuration from a given path
-    pub fn load_from_path(path: &Path) -> Configuration {
-        let config = match std::fs::read_to_string(path) {
-            Ok(config) => config,
-            Err(_) => {
-                eprintln!("Could not read configuration file, using defaults");
-                String::new()
-            }
-        };
-        let config: Configuration = toml::from_str(&config).unwrap_or_default();
-        config
+impl Default for Configuration{
+    fn default() -> Configuration {
+        Configuration {
+            open_weather_key: String::new(),
+            location: String::new(),
+            is_location_ip_based: true,
+            units: Units::Imperial
+        }
     }
 }
