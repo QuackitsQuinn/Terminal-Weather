@@ -25,16 +25,16 @@ impl Endpoint {
     }
     pub fn builder(&self, client: &Client) -> RequestBuilder {
         let url = self.url.clone();
-        let mut strurl  = url.as_str();
+        let mut str_url = url.as_str();
         let fmt;
         if let Some(query_params) = &self.query_params {
             println!("{:?}",query_params);
             let query = query_params.join("&");
             println!("{}", query);
-            fmt = format!("{}?{}", &strurl, query);
-            strurl = fmt.as_str();
+            fmt = format!("{}?{}", &str_url, query);
+            str_url = fmt.as_str();
         }
-        client.request(self.method.clone(), strurl)
+        client.request(self.method.clone(), str_url)
     }
 }
 
