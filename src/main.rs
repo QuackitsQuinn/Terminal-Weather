@@ -5,7 +5,7 @@ mod units;
 mod endpoints;
 mod endpoint;
 mod test;
-mod ip_response;
+mod responses;
 
 fn main() {
     println!("Hello, world!");

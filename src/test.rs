@@ -1,8 +1,7 @@
 
 #[cfg(test)]
 mod req_tests {
-    use crate::endpoints;
-    use crate::ip_response::IpResponse;
+    use crate::responses::ip_response::IpResponse;
 
     #[tokio::test]
     async fn test_ip_resp() {
